@@ -88,7 +88,7 @@ h2 {
   gap: 1lh;
 }
 
-.refferal-code {
+.referral-code {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -135,9 +135,34 @@ h2 {
   }
 }
 
-.card {
+/* .card {
   background-color: var(--surface-2);
   border-radius: 1rem;
+  border: var(--border-1) 1px solid;
+} */
+
+.card {
+  --border-width: 1px;
+  border-radius: 1rem;
+  position: relative;
+  background: hsl(from var(--surface-3) h s l / 0.5);
+  backdrop-filter: blur(12px);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  border-radius: inherit;
+  border: var(--border-width) solid transparent;
+  background: 
+    linear-gradient(var(--border-1), var(--border-2)) border-box;
+    mask: 
+    linear-gradient(#000, #000) border-box,
+    linear-gradient(#000, #000) padding-box;
+    mask-composite: subtract;
+
 }
 
 
